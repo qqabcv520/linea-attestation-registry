@@ -52,9 +52,9 @@ describe("PortalDataMapper", () => {
       expect(result[0].name).toContain(partialName);
       expect(result[0].id).toEqual("0x0cb56f201e7afe02e542e2d2d42c34d4ce7203f7");
       expect(result[1].name).toContain(partialName);
-      expect(result[1].id).toEqual("0x2b4af326976c29adb9846209b5f0eab09e1facc2");
+      expect(result[1].id).toEqual("0x19cd034885c9ab5ed9964f95c0dd690dc2ca6d19");
       expect(result[2].name).toContain(partialName);
-      expect(result[2].id).toEqual("0x79c06b913c42fd960b6917798c39edff292835f1");
+      expect(result[2].id).toEqual("0x2b4af326976c29adb9846209b5f0eab09e1facc2");
     });
   });
 });
