@@ -59,7 +59,7 @@ const config = createConfig(
     infuraId: "https://hashkeychain-testnet.alt.technology",
     walletConnectProjectId: import.meta.env.VITE_WALLETCONNECT_PROJECT_ID || "",
     chains: [...chains.map((el) => el.chain), mainnet],
-    appName: "Verax | Explorer",
+    appName: "Has Browser",
     appIcon: veraxColoredIcon,
   }),
 );
