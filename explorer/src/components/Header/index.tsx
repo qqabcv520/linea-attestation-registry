@@ -43,12 +43,12 @@ export const Header: React.FC<HeaderProps> = ({ isOpened, setIsOpened }) => {
     <header className="px-5 md:px-14 xl:px-[60px] py-3 inline-flex flex-col gap-5">
       <div className="justify-between items-center inline-flex gap-4">
         <div className="justify-start items-center gap-6 flex self-stretch">
-          <Link to={APP_ROUTES.HOME} className="shrink-0 hover:opacity-70 flex flex-row">
+          <Link to={APP_ROUTES.HOME} className="shrink-0 hover:opacity-70 flex flex-row items-center">
             {isDarkMode ? (
               <div className="flex gap-1 sm:gap-2 items-center">
                 <img
                   src={"https://hashkeychain-testnet-explorer.alt.technology/assets/configs/network_icon.png"}
-                  className="w-[50px] h-6 sm:h-[24px] sm:w-[24px]"
+                  className="h-[32px] w-[32px]"
                 />
                 {/*<BetaDark*/}
                 {/*  className="mt-1 w-[21px] h-[10px] sm:w-auto sm:h-auto" />*/}
@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ isOpened, setIsOpened }) => {
               <div className="flex gap-1 sm:gap-2 items-center">
                 <img
                   src={"https://hashkeychain-testnet-explorer.alt.technology/assets/configs/network_icon.png"}
-                  className="w-[50px] h-6 sm:h-[24px] sm:w-[24px]"
+                  className="h-[32px] w-[32px]"
                 />
                 {/*<BetaLight className="mt-1 w-[21px] h-[10px] sm:w-auto sm:h-auto" />*/}
               </div>
