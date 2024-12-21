@@ -48,7 +48,7 @@ const chains: INetwork[] = [
         src="https://hashkeychain-testnet-explorer.alt.technology/assets/configs/network_icon.png"
       />
     ),
-    network: "linea",
+    network: "hashkey-chain-testnet",
     prefix: "0x0000",
   },
 ];
