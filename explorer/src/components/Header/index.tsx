@@ -6,19 +6,8 @@ import { useLocation } from "react-router-dom";
 import { useTernaryDarkMode } from "usehooks-ts";
 import { useAccount } from "wagmi";
 
-import BetaDark from "@/assets/logo/beta-dark.svg?react";
-import BetaLight from "@/assets/logo/beta-light-strong.svg?react";
-import VeraxLogoDarkMode from "@/assets/logo/verax-logo-dark.svg?react";
-import VeraxLogo from "@/assets/logo/verax-logo-light.svg?react";
 import { LightDarkModeSwitcher } from "@/components/LightDarkModeSwitcher";
 import { Link } from "@/components/Link";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { chains } from "@/config";
 import useWindowDimensions from "@/hooks/useWindowDimensions";
 import { useNetworkContext } from "@/providers/network-provider/context";
 import { APP_ROUTES } from "@/routes/constants";
@@ -42,7 +31,7 @@ export const Header: React.FC<HeaderProps> = ({ isOpened, setIsOpened }) => {
   const { address, isConnected } = useAccount();
   const { isDarkMode } = useTernaryDarkMode();
 
-  const { network, setNetwork } = useNetworkContext();
+  const { network } = useNetworkContext();
   const screen = useWindowDimensions();
   const isAdaptive = !screen.xl;
   const isHomePage = location.pathname === `/${network.network}`;
@@ -54,49 +43,57 @@ export const Header: React.FC<HeaderProps> = ({ isOpened, setIsOpened }) => {
     <header className="px-5 md:px-14 xl:px-[60px] py-3 inline-flex flex-col gap-5">
       <div className="justify-between items-center inline-flex gap-4">
         <div className="justify-start items-center gap-6 flex self-stretch">
-          <Link to={APP_ROUTES.HOME} className="shrink-0 hover:opacity-70">
+          <Link to={APP_ROUTES.HOME} className="shrink-0 hover:opacity-70 flex flex-row">
             {isDarkMode ? (
               <div className="flex gap-1 sm:gap-2 items-center">
-                <VeraxLogoDarkMode className="w-[76.434px] h-6 sm:h-auto sm:w-auto" />
-                <BetaDark className="mt-1 w-[21px] h-[10px] sm:w-auto sm:h-auto" />
+                <img
+                  src={"https://hashkeychain-testnet-explorer.alt.technology/assets/configs/network_icon.png"}
+                  className="w-[50px] h-6 sm:h-[24px] sm:w-[24px]"
+                />
+                {/*<BetaDark*/}
+                {/*  className="mt-1 w-[21px] h-[10px] sm:w-auto sm:h-auto" />*/}
               </div>
             ) : (
               <div className="flex gap-1 sm:gap-2 items-center">
-                <VeraxLogo className="w-[76.434px] h-6 sm:h-auto sm:w-auto" />
-                <BetaLight className="mt-1 w-[21px] h-[10px] sm:w-auto sm:h-auto" />
+                <img
+                  src={"https://hashkeychain-testnet-explorer.alt.technology/assets/configs/network_icon.png"}
+                  className="w-[50px] h-6 sm:h-[24px] sm:w-[24px]"
+                />
+                {/*<BetaLight className="mt-1 w-[21px] h-[10px] sm:w-auto sm:h-auto" />*/}
               </div>
             )}
+            <span className="ml-1">Has Browser</span>
           </Link>
           {!isAdaptive && <NavigationList />}
         </div>
         <div className="justify-end items-center gap-4 flex flex-1">
           {!screen.sm && !isHomePage && <SearchInput />}
           {!isAdaptive && <LightDarkModeSwitcher />}
-          <DropdownMenu>
-            <DropdownMenuTrigger className="DropdownMenuTrigger select-none w-[72px] p-2 rounded-md outline-none hover:bg-jumbotronLight dark:hover:bg-jumbotronDark justify-start items-center gap-2 inline-flex transition dark:text-whiteDefault">
-              {isDarkMode && network.imgDark ? network.imgDark : network.img}
-              <ChevronDown className="header-arrow w-6 h-6 relative" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="flex flex-col gap-2 bg-surface-primary dark:bg-blackDefault dark:border-border-cardDark">
-              {chains.map((chain) => (
-                <DropdownMenuItem
-                  key={chain.name}
-                  className="flex gap-2 focus:bg-jumbotronLight dark:focus:bg-jumbotronDark dark:text-whiteDefault cursor-pointer transition"
-                  onClick={() => setNetwork(chain)}
-                >
-                  <div
-                    style={{
-                      width: "24px",
-                      height: "24px",
-                    }}
-                  >
-                    {isDarkMode && chain.imgDark ? chain.imgDark : chain.img}
-                  </div>
-                  {chain.name}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+          {/*<DropdownMenu>*/}
+          {/*  <DropdownMenuTrigger className="DropdownMenuTrigger select-none w-[72px] p-2 rounded-md outline-none hover:bg-jumbotronLight dark:hover:bg-jumbotronDark justify-start items-center gap-2 inline-flex transition dark:text-whiteDefault">*/}
+          {/*    {isDarkMode && network.imgDark ? network.imgDark : network.img}*/}
+          {/*    <ChevronDown className="header-arrow w-6 h-6 relative" />*/}
+          {/*  </DropdownMenuTrigger>*/}
+          {/*  <DropdownMenuContent className="flex flex-col gap-2 bg-surface-primary dark:bg-blackDefault dark:border-border-cardDark">*/}
+          {/*    {chains.map((chain) => (*/}
+          {/*      <DropdownMenuItem*/}
+          {/*        key={chain.name}*/}
+          {/*        className="flex gap-2 focus:bg-jumbotronLight dark:focus:bg-jumbotronDark dark:text-whiteDefault cursor-pointer transition"*/}
+          {/*        onClick={() => setNetwork(chain)}*/}
+          {/*      >*/}
+          {/*        <div*/}
+          {/*          style={{*/}
+          {/*            width: "24px",*/}
+          {/*            height: "24px",*/}
+          {/*          }}*/}
+          {/*        >*/}
+          {/*          {isDarkMode && chain.imgDark ? chain.imgDark : chain.img}*/}
+          {/*        </div>*/}
+          {/*        {chain.name}*/}
+          {/*      </DropdownMenuItem>*/}
+          {/*    ))}*/}
+          {/*  </DropdownMenuContent>*/}
+          {/*</DropdownMenu>*/}
           <ConnectKitButton.Custom>
             {({ isConnected, show }) => {
               if (!show) return <></>;

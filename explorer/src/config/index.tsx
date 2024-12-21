@@ -56,7 +56,7 @@ const chains: INetwork[] = [
 const config = createConfig(
   getDefaultConfig({
     autoConnect: true,
-    // infuraId: import.meta.env.VITE_INFURA_API_KEY,
+    infuraId: "https://hashkeychain-testnet.alt.technology",
     walletConnectProjectId: import.meta.env.VITE_WALLETCONNECT_PROJECT_ID || "",
     chains: [...chains.map((el) => el.chain), mainnet],
     appName: "Verax | Explorer",
