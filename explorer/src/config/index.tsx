@@ -24,7 +24,7 @@ const hashkeyChainTestnet = {
 const HASHKEY_TESTNET_FRONTEND: Conf = {
   chain: hashkeyChainTestnet,
   mode: SDKMode.FRONTEND,
-  subgraphUrl: "http://47.236.19.172:8000/subgraphs/name/trustalabs/verax_v2",
+  subgraphUrl: "https://thegraph.trustalabs.ai/subgraphs/name/trustalabs/verax_v2",
   portalRegistryAddress: "0x6ad68fC3A8276CE5FAD8D1545AAc19659CA292a4",
   moduleRegistryAddress: "0x32C10e8f48a0dDb11dADD752AFAa01012923433F",
   schemaRegistryAddress: "0xAD60b34E07261B5d27C49fA5835A5c0379763e1C",
