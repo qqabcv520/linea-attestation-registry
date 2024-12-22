@@ -1,9 +1,5 @@
 import { t } from "i18next";
 
-import GitbookIcon from "@/assets/icons/gitbook.svg?react";
-import TrustaIcon from "@/assets/issuers/trusta.svg?react";
-import GithubIcon from "@/assets/socials/github.svg?react";
-import LensIcon from "@/assets/socials/lens.svg?react";
 import TwitterXIcon from "@/assets/socials/twitter-x.svg?react";
 import { Info } from "@/components/NavigationList/components/Info";
 import { IInfoListItem, NavigationProps, SearchElementProps } from "@/interfaces/components";
