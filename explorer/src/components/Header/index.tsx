@@ -47,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({ isOpened, setIsOpened }) => {
             {isDarkMode ? (
               <div className="flex gap-1 sm:gap-2 items-center">
                 <img
-                  src={"https://hashkeychain-testnet-explorer.alt.technology/assets/configs/network_icon.png"}
+                  src={"https://hsk.xyz/static/logo.png"}
                   className="h-[32px] w-[32px]"
                 />
                 {/*<BetaDark*/}
@@ -56,13 +56,13 @@ export const Header: React.FC<HeaderProps> = ({ isOpened, setIsOpened }) => {
             ) : (
               <div className="flex gap-1 sm:gap-2 items-center">
                 <img
-                  src={"https://hashkeychain-testnet-explorer.alt.technology/assets/configs/network_icon.png"}
+                  src={"https://hsk.xyz/static/logo.png"}
                   className="h-[32px] w-[32px]"
                 />
                 {/*<BetaLight className="mt-1 w-[21px] h-[10px] sm:w-auto sm:h-auto" />*/}
               </div>
             )}
-            <span className="ml-1">Has Browser</span>
+            <span className="ml-1">HAS Attestation Browser</span>
           </Link>
           {!isAdaptive && <NavigationList />}
         </div>
