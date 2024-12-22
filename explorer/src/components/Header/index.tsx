@@ -46,23 +46,17 @@ export const Header: React.FC<HeaderProps> = ({ isOpened, setIsOpened }) => {
           <Link to={APP_ROUTES.HOME} className="shrink-0 hover:opacity-70 flex flex-row items-center">
             {isDarkMode ? (
               <div className="flex gap-1 sm:gap-2 items-center">
-                <img
-                  src={"https://hsk.xyz/static/logo.png"}
-                  className="h-[32px] w-[32px]"
-                />
+                <img src={"https://hsk.xyz/static/logo.png"} className="h-[32px] w-[32px]" />
                 {/*<BetaDark*/}
                 {/*  className="mt-1 w-[21px] h-[10px] sm:w-auto sm:h-auto" />*/}
               </div>
             ) : (
               <div className="flex gap-1 sm:gap-2 items-center">
-                <img
-                  src={"https://hsk.xyz/static/logo.png"}
-                  className="h-[32px] w-[32px]"
-                />
+                <img src={"https://hsk.xyz/static/logo.png"} className="h-[32px] w-[32px]" />
                 {/*<BetaLight className="mt-1 w-[21px] h-[10px] sm:w-auto sm:h-auto" />*/}
               </div>
             )}
-            <span className="ml-1">HAS Attestation Browser</span>
+            <span className="ml-1 font-medium">HAS Attestation Browser</span>
           </Link>
           {!isAdaptive && <NavigationList />}
         </div>

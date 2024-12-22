@@ -1,11 +1,7 @@
 import { useTernaryDarkMode } from "usehooks-ts";
 
-import BetaDark from "@/assets/logo/beta-dark.svg?react";
-import BetaLight from "@/assets/logo/beta-light.svg?react";
 import HapiLogoDark from "@/assets/logo/hapi-dark.svg?react";
 import HapiLogo from "@/assets/logo/hapi.svg?react";
-import VeraxLogoGreyDark from "@/assets/logo/verax-logo-grey-dark.svg?react";
-import VeraxLogoGrey from "@/assets/logo/verax-logo-grey-light.svg?react";
 import { Link } from "@/components/Link";
 import { INFO_LIST } from "@/constants/components";
 import { APP_ROUTES } from "@/routes/constants";
@@ -16,35 +12,10 @@ export const Footer: React.FC = () => {
   return (
     <footer className="flex flex-col justify-between items-center py-5 sm:px-8 md:px-[60px] border-t-[1px] border-border-table dark:border-border-tableDark sm:flex-row gap-14 sm:gap-0 transition-spacing mt-14 md:mt-[4.5rem]">
       <Link to={APP_ROUTES.HOME} className="group">
-        {isDarkMode ? (
-          <div className="flex gap-2 items-center">
-            <VeraxLogoGreyDark
-              className="
-        group-hover:[&>path]:fill-whiteDefault
-        group-hover:[&>g>ellipse]:fill-[#D7D6CF]
-        group-hover:[&>g>path]:fill-[#A5AF63]
-        [&>path]:transition
-        [&>g>ellipse]:transition
-        [&>g>path]:transition
-        "
-            />
-            <BetaDark className="mt-1" />
-          </div>
-        ) : (
-          <div className="flex gap-2 items-center">
-            <VeraxLogoGrey
-              className="
-      group-hover:[&>path]:fill-blackDefault
-      group-hover:[&>g>circle]:fill-[#676455]
-      group-hover:[&>g>path]:fill-[#A5AF63]
-      [&>path]:transition
-      [&>g>circle]:transition
-      [&>g>path]:transition
-      "
-            />
-            <BetaLight className="mt-1" />
-          </div>
-        )}
+        <div className="flex gap-2 items-center">
+          <img src={"https://hsk.xyz/static/logo.png"} className="h-[32px] w-[32px]" />
+          <span className="ml-1 font-medium">HAS Attestation Browser</span>
+        </div>
       </Link>
       <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 text-text-quaternary text-sm">
         {INFO_LIST.map(({ title, logo, url }) => {

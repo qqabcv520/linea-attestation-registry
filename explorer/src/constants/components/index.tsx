@@ -1,7 +1,7 @@
 import { t } from "i18next";
 
 import GitbookIcon from "@/assets/icons/gitbook.svg?react";
-import VeraxIcon from "@/assets/logo/verax-icon.svg?react";
+import TrustaIcon from "@/assets/issuers/trusta.svg?react";
 import GithubIcon from "@/assets/socials/github.svg?react";
 import LensIcon from "@/assets/socials/lens.svg?react";
 import TwitterXIcon from "@/assets/socials/twitter-x.svg?react";
@@ -31,28 +31,20 @@ export const DEFAULT_ROUTES: Array<NavigationProps> = [
 export const INFO_LIST: IInfoListItem[] = [
   {
     title: t("common.routes.info.about"),
-    logo: VeraxIcon,
-    url: "https://ver.ax/",
+    logo: () => (
+      <img
+        style={{ width: 20, height: 12, filter: "grayscale(100%)" }}
+        src={
+          "https://trustgo.trustalabs.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo1%402x.1efe7907.webp&w=64&q=75"
+        }
+      ></img>
+    ),
+    url: "https://trustalabs.ai/",
   },
   {
     title: t("common.routes.info.twitter"),
     logo: TwitterXIcon,
-    url: "https://twitter.com/VeraxRegistry",
-  },
-  {
-    title: t("common.routes.info.lens"),
-    logo: LensIcon,
-    url: "https://share.lens.xyz/u/lens/verax.lens",
-  },
-  {
-    title: t("common.routes.info.github"),
-    logo: GithubIcon,
-    url: "https://github.com/Consensys/linea-attestation-registry/tree/dev",
-  },
-  {
-    title: t("common.routes.info.documentation"),
-    logo: GitbookIcon,
-    url: "https://docs.ver.ax/verax-documentation/",
+    url: "https://x.com/TrustaLabs",
   },
 ];
 
